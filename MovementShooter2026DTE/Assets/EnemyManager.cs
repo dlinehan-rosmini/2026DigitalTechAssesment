@@ -26,9 +26,11 @@ public class EnemyManager : MonoBehaviour
     public GameObject model;
     public GameObject canvas;
     public CapsuleCollider collision;
+    public UIController uicontrol;
 
     private void Start()
     {
+        uicontrol = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
         AIpath = GetComponent<AIPath>();
         pathfinderDestination = GetComponent<AIDestinationSetter>();
         healthbarFillAmount = (Health / FullHealth);
@@ -92,6 +94,7 @@ public class EnemyManager : MonoBehaviour
         canvas.SetActive(false);
         collision.enabled = false;
         model.transform.Rotate(new Vector3(model.transform.rotation.x, model.transform.rotation.y, 90f));
+        uicontrol.ActivateKillIndicator();
         Destroy(gameObject, 10f);
     }
 }

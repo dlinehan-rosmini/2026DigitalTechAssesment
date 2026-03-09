@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a83d11f796cee44a3e0ccb471f5486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  time: 2
+  time: 1
 --- !u!1 &4146099962911283528
 GameObject:
   m_ObjectHideFlags: 0
@@ -5049,4 +5049,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7670bad69cd2afc4e8f2f731c72e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterTIme
-  time: 2
+  time: 1

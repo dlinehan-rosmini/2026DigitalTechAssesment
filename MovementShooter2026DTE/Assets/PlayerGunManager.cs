@@ -24,15 +24,31 @@ public class PlayerGunManager : MonoBehaviour
     public float maxNanites;
     public float nanitePercent;
     public int ArmorLevel;
+    private int currentArmorLevel;
 
 
     private void Start()
     {
         //test
-        createLoadout(0, 1, 3);
+        createLoadout(0, 2, 3);
+        
 
-        nanitePercent = (Nanites / fullNanites) * 100;
-        uiControl.nanitePercent = nanitePercent.ToString();
+        nanitePercent = Nanites / fullNanites;
+
+        if ((nanitePercent * 100) > 200)
+        {
+            currentArmorLevel = ArmorLevel + 2;
+        }
+        else if ((nanitePercent * 100) > 100)
+        {
+            currentArmorLevel = ArmorLevel + 1;
+        }
+        else
+        {
+            currentArmorLevel = ArmorLevel;
+        }
+
+        uiControl.nanitePercent = nanitePercent * 100;
         currentlySelectedGun = AvailableGuns[currentlySelectedGunIndex];
         foreach (GunScript gun in AvailableGuns)
         {
@@ -57,7 +73,7 @@ public class PlayerGunManager : MonoBehaviour
             changeSelectedWeapon();
 
         if (Input.GetKeyDown(takeDamage))
-            ChangeHealth(-50, 10);
+            ChangeHealth(-13, 10);
 
         uiControl.Gunname = currentlySelectedGun.UIName;
         uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
@@ -91,48 +107,45 @@ public class PlayerGunManager : MonoBehaviour
 
     public void ChangeHealth(float amount, int armor)
     {
-        if (amount > 0)
-        {
-            if ((Nanites + amount) > maxNanites)
-                Nanites = maxNanites;
-            else
-                Nanites += amount;
-        }
-        else
-        {
-            if (armor > ArmorLevel)
-            {
-                Nanites += amount;
-                print(amount);
-            }
-            else if (armor == ArmorLevel)
-            {
-                Nanites += amount / 2;
-                print(amount / 2);
-            }
-            else
-            {
-                Nanites += amount / 5;
-                print(amount / 5);
-            }
-
-        }
-
-
-
-
-        if ((Nanites += amount) <= maxNanites || (Nanites += amount) > 0)
+        if (armor > currentArmorLevel)
         {
 
             Nanites += amount;
         }
+        else if (armor == currentArmorLevel)
+        {
+
+            Nanites += amount/2;
+        }
         else
-            if ((Nanites += amount) > maxNanites)
-            Nanites = maxNanites;
-        else
+        {
+            Nanites += amount/5;
+        }
+
+        if (Nanites < 0)
+        {
             Nanites = 0;
-        print(Nanites / fullNanites);
-        nanitePercent = (Nanites / fullNanites) * 100;
-        uiControl.nanitePercent = nanitePercent.ToString();
+        }
+        nanitePercent = Nanites / fullNanites;
+        print(nanitePercent);
+        uiControl.nanitePercent = nanitePercent * 100;
+        if ((nanitePercent*100) > 200)
+        {
+            currentArmorLevel = ArmorLevel + 2;
+        }
+        else if ((nanitePercent * 100) > 100)
+        {
+            currentArmorLevel = ArmorLevel + 1;
+        }
+        else
+        {
+            currentArmorLevel = ArmorLevel;
+        }
+    }
+
+
+    public void addDamage(float am, Color col)
+    {
+        uiControl.ChangeDamageIndicator(am, col);
     }
 }
