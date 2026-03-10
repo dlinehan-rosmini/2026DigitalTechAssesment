@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 690f207f42f7dca49a5c7f2445f153c8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Geist Pixel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 29a6344a7824dc044be72e94ea1bbe56, type: 3}
+  - {fileID: 12800000, guid: fc0403f8ca94e554a821ef22ca589d7f, type: 3}
+  - {fileID: 12800000, guid: c73baba3341e6ac4e962ba1b858c9e29, type: 3}
+  - {fileID: 12800000, guid: c27bb6301bd82a04a836e35ed021eae6, type: 3}
+  - {fileID: 12800000, guid: 78d71eada77ea494aa8dd074bac04d91, type: 3}
+  - {fileID: 12800000, guid: bda8d9410ae99e84999a282810b300c7, type: 3}
+  - {fileID: 12800000, guid: f76da39b73c52c845979db1949f020ef, type: 3}
+  - {fileID: 12800000, guid: 40be0c5d3dbd65f4ea3d32824a987223, type: 3}
+  - {fileID: 12800000, guid: 7b723054f6c258a43ab7da36551d8484, type: 3}
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
