@@ -22,6 +22,7 @@ public class GunScript : MonoBehaviour
     public LayerMask bulletHitLayer;
     public bool automatic = true;
     public bool shooting;
+    private bool firerateTimerActive;
 
     [Header("Shotgun")]
     public bool shotGun;
@@ -165,8 +166,12 @@ public class GunScript : MonoBehaviour
             }
             //ShellFX
             EjectShell();
-            if (automatic)
+            if (automatic && !firerateTimerActive)
+            {
+                firerateTimerActive = true;
                 Invoke(nameof(FireRateLimit), FireRate);
+            }
+
             readyToFire=false;
             AmmoLoaded--;
             UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
@@ -176,8 +181,12 @@ public class GunScript : MonoBehaviour
     {
         shooting = false;
 
-        if (!automatic)
+        if (!automatic && !firerateTimerActive)
+        {
+            firerateTimerActive = true;
             Invoke(nameof(FireRateLimit), FireRate);
+        }
+            
     }
 
     public void Reload()
@@ -212,5 +221,6 @@ public class GunScript : MonoBehaviour
     public void FireRateLimit()
     {
         readyToFire = true;
+        firerateTimerActive = false;
     }
 }
