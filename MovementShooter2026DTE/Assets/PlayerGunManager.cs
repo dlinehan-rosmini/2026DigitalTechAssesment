@@ -31,7 +31,7 @@ public class PlayerGunManager : MonoBehaviour
     private void Start()
     {
         //test
-        createLoadout(1, 2, 3);
+        createLoadout(0, 2, 3);
         
 
         nanitePercent = Nanites / fullNanites;

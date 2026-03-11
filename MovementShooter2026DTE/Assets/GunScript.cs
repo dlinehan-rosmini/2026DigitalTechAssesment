@@ -45,6 +45,9 @@ public class GunScript : MonoBehaviour
     //Reloading FX
     public GameObject MagazineModel;
     public GameObject staticMagazine;
+    //Animations
+    public Animator gunAnimator;
+
 
     [Header("References")]
     public PlayerGunManager player;
@@ -67,6 +70,7 @@ public class GunScript : MonoBehaviour
     {
         if (readyToFire && AmmoLoaded > 0 && !reloading)
         {
+            gunAnimator.SetTrigger("shoot");
             shooting = true;
             Vector3 bulletAngle = bulletPosition.forward;
             if (spread)
@@ -161,20 +165,19 @@ public class GunScript : MonoBehaviour
             }
             //ShellFX
             EjectShell();
-
             if (automatic)
                 Invoke(nameof(FireRateLimit), FireRate);
             readyToFire=false;
             AmmoLoaded--;
             UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
         }
-        
     }
     public void stopShooting()
     {
         shooting = false;
-        if(!automatic)
-            readyToFire = true;
+
+        if (!automatic)
+            Invoke(nameof(FireRateLimit), FireRate);
     }
 
     public void Reload()
