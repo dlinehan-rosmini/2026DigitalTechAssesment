@@ -10508,43 +10508,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.047450125
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.110120595
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.122
+      value: 0.0547958
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97162527
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.024990544
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.006047472
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.23512396
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.62
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1.348
       objectReference: {fileID: 0}
     - target: {fileID: 2239738783425045222, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 27.238
       objectReference: {fileID: 0}
     - target: {fileID: 4343368895712966085, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_Name
@@ -10552,7 +10552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343368895712966085, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6925415778276323269, guid: d699adc188f267d4d9391301df0ce79e, type: 3}
       propertyPath: player
@@ -10585,11 +10585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391733958725322274, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1391733958725322274, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.023
       objectReference: {fileID: 0}
     - target: {fileID: 1391733958725322274, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10623,10 +10623,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: ar
       objectReference: {fileID: 0}
+    - target: {fileID: 3459880348294271233, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2036194897}
+    - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
+      propertyPath: AmmoLoaded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
+      propertyPath: BulletDamage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
+      propertyPath: ArmorPenLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
+      propertyPath: maxAmmoLoaded
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7807355897375050497, guid: 8e01d106d8e3ef045915e4d0267a26cb, type: 3}
       propertyPath: bulletPosition
       value: 

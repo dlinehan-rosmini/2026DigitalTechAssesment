@@ -44,6 +44,7 @@ public class GunScript : MonoBehaviour
     public GameObject shell;
     public Transform shellEjectPoint;
     //Reloading FX
+    public bool magazine = true;
     public GameObject MagazineModel;
     public GameObject staticMagazine;
     //Animations
@@ -193,7 +194,8 @@ public class GunScript : MonoBehaviour
     {
         if (!reloading)
         {
-            EjectMagazine();
+            if (magazine)
+                EjectMagazine();
             reloading = true;
             UISubtext = "Reloading...";
             Invoke(nameof(reloadin), reloadSpeed);
