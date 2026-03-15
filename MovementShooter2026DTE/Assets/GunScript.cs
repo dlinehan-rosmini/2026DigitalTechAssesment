@@ -67,7 +67,12 @@ public class GunScript : MonoBehaviour
 
         UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
     }
-
+    public void selectGun()
+    {
+        readyToFire = false;
+        gunAnimator.SetTrigger("Draw");
+        Invoke(nameof(FireRateLimit), 0.5f);
+    }
     public void Shoot()
     {
         if (readyToFire && AmmoLoaded > 0 && !reloading)

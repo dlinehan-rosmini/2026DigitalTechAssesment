@@ -97,6 +97,7 @@ public class PlayerGunManager : MonoBehaviour
         }
         currentlySelectedGun = AvailableGuns[currentlySelectedGunIndex];
         currentlySelectedGun.gameObject.SetActive(true);
+        currentlySelectedGun.selectGun();
     }
 
     public void createLoadout(int firstGunIndex, int secondGunIndex, int thirdGunIndex)
