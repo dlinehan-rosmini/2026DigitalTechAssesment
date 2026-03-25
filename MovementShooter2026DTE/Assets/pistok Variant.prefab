@@ -81,6 +81,10 @@ PrefabInstance:
       value: 0.476
       objectReference: {fileID: 0}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: shell
+      value: 
+      objectReference: {fileID: 1312217365781503629, guid: 34b09255b431be34882469fb9e68cf76, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: UIName
       value: Pistol
       objectReference: {fileID: 0}
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: AmmoLoaded
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: shellModel
+      value: 
+      objectReference: {fileID: 4300016, guid: 8ad3e0a85a0ebca4293e1b33319beb91, type: 3}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: gunAnimator
       value: 

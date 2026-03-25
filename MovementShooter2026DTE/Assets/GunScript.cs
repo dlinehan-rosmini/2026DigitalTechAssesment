@@ -181,6 +181,10 @@ public class GunScript : MonoBehaviour
             readyToFire=false;
             AmmoLoaded--;
             UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
+            if (AmmoLoaded == 0)
+            {
+                gunAnimator.SetBool("gunEmpty", true);
+            }
         }
     }
     public void stopShooting()
@@ -213,11 +217,12 @@ public class GunScript : MonoBehaviour
         staticMagazine.SetActive(true);
         AmmoLoaded = maxAmmoLoaded;
         UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
+        gunAnimator.SetBool("gunEmpty", false);
     }
 
     private void EjectShell()
     {
-        Instantiate(shell, shellEjectPoint.transform);
+        var shellgo = Instantiate(shell, shellEjectPoint.transform);
     }
 
     private void EjectMagazine()

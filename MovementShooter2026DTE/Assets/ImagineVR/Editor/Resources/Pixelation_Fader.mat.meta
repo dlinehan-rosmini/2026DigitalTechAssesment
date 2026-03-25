@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9a4f507825e7a2544ba34b504951f7a3
+timeCreated: 1426568392
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 77357
+  packageName: ImagineVR Pixelation Creator
+  packageVersion: 1.1
+  assetPath: Assets/ImagineVR/Editor/Resources/Pixelation_Fader.mat
+  uploadId: 722953

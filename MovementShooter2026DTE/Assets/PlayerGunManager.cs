@@ -17,6 +17,7 @@ public class PlayerGunManager : MonoBehaviour
     public KeyCode shootGun;
     public KeyCode reloadselectedGun;
     public KeyCode takeDamage;
+    public KeyCode throwThrowable;
 
     [Header("Health")]
     public float Nanites;
@@ -26,12 +27,19 @@ public class PlayerGunManager : MonoBehaviour
     public int ArmorLevel;
     private int currentArmorLevel;
 
+    [Header("Throwables")]
+    public GameObject selectedThrowable;
+    public GameObject[] throwables;
+    public float throwDistance;
+    public Transform throwPosition;
+    public int throwableAmmo;
+    public int maxThrowableAmmo;
 
 
     private void Start()
     {
         //test
-        createLoadout(0, 2, 3);
+        createLoadout(0, 2, 4);
         
 
         nanitePercent = Nanites / fullNanites;
@@ -76,6 +84,10 @@ public class PlayerGunManager : MonoBehaviour
         if (Input.GetKeyDown(takeDamage))
             ChangeHealth(-13, 10);
 
+        if (Input.GetKeyDown(throwThrowable) && throwableAmmo > 0)
+            Throwable();
+
+
         uiControl.Gunname = currentlySelectedGun.UIName;
         uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
 
@@ -99,7 +111,14 @@ public class PlayerGunManager : MonoBehaviour
         currentlySelectedGun.gameObject.SetActive(true);
         currentlySelectedGun.selectGun();
     }
+    public void Throwable()
+    {
+        throwableAmmo--;
+        var t = Instantiate(selectedThrowable, throwPosition.position, throwPosition.rotation);
+        t.GetComponent<ThrowableScript>().Throw(throwDistance, throwPosition);
 
+
+    }
     public void createLoadout(int firstGunIndex, int secondGunIndex, int thirdGunIndex)
     {
         AvailableGuns[0] = guns[firstGunIndex];
