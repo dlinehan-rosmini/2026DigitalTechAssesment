@@ -472,6 +472,8 @@
 "Assets/BulletScript.cs"
 "Assets/DestroyAfterTIme.cs"
 "Assets/EnemyManager.cs"
+"Assets/EnemyPatrolGroupHandler.cs"
+"Assets/GameController.cs"
 "Assets/goToObjectScript.cs"
 "Assets/GunScript.cs"
 "Assets/ImagineVR/CameraCensorship.cs"

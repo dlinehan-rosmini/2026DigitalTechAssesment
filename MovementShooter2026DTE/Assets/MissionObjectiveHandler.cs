@@ -11,8 +11,8 @@ public class MissionObjectiveHandler : MonoBehaviour
     [Header("References")]
     public Transform missionLocation;
     public MissionManager manangeah;
-    public GameObject billboardCanvas;
     public Image missionImage;
+
 
     private void Update()
     {

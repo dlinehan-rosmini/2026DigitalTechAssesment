@@ -32,6 +32,15 @@ public class UIController : MonoBehaviour
     public float maxKillIconVisibilityTime;
     private float killiconVisibilityTime;
 
+    [Header("Mission")]
+    public GameController gameControl;
+    public GameObject missionHalfCompleteText;
+    public GameObject missionCompletePopup;
+    public KeyCode restartGameKeycode;
+    public float CompleteholdTime;
+    float heldTime;
+    public Image holdTimeFillIndicator;
+
     private void Update()
     {
         speedText.text = speed.ToString();
@@ -48,6 +57,22 @@ public class UIController : MonoBehaviour
         {
             killiconVisibilityTime -= Time.deltaTime;
         }
+        if (Input.GetKey(restartGameKeycode))
+        {
+            if (heldTime < CompleteholdTime)
+            {
+                heldTime += Time.deltaTime;
+                holdTimeFillIndicator.fillAmount = heldTime / CompleteholdTime;
+            }
+            else
+            {
+                gameControl.RestartMission();
+            }
+        }
+
+
+        if (heldTime > 0)
+            heldTime -= Time.deltaTime;
     }
 
 
@@ -66,6 +91,19 @@ public class UIController : MonoBehaviour
     {
         killiconVisibilityTime = maxKillIconVisibilityTime;
         killIcon.SetActive(true);
+    }
+
+    public void CompleteMission(bool full)
+    {
+        if (full)
+        {
+            missionCompletePopup.SetActive(true);
+            missionHalfCompleteText.SetActive(false);
+        }
+        else
+        {
+            missionHalfCompleteText.SetActive(true);
+        }
     }
 
 }

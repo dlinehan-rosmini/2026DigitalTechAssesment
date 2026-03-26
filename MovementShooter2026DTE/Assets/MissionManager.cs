@@ -5,6 +5,8 @@ public class MissionManager : MonoBehaviour
 
     [Header("Mission")]
     public MissionType currentMissionType;
+
+
     public enum MissionType
     {
         assassinate,
@@ -13,12 +15,22 @@ public class MissionManager : MonoBehaviour
         clearArea,
     }
     public Transform currentMissionLocation;
+    public GameObject missionCanvas;
     public Vector3[] missionLocations;
     [Header ("Mission Type Variants")]
     public GameObject[] AssassinateObjectives;
     public GameObject[] CaptureObjectives;
     public GameObject[] DestroyObjectives;
     public GameObject[] ClearAreaObjectives;
+
+    [Header("Enemy + Game completion")]
+    public EnemyPatrolGroupHandler[] patrolGroups;
+    public bool completeMission;
+    public bool completedEnemyPatrols;
+    public bool completedGame;
+
+    [Header("References")]
+    public UIController ui;
 
 
     private void Start()
@@ -56,6 +68,7 @@ public class MissionManager : MonoBehaviour
     public void CompleteObjective()
     {
         print("done");
-        //this isint the entire code dont worry
+        missionCanvas.SetActive(false);
+        completeMission = true;
     }
 }
