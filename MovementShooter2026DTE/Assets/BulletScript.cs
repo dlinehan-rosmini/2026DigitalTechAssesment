@@ -47,7 +47,7 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
         //Backward Raycast
-        if (Physics.Raycast(transform.position, -transform.forward, out Bhit, rayDistance, rayMask))
+        if (Physics.Raycast(transform.position, -transform.forward, out Bhit, rayDistance/2, rayMask))
         {
             if (isEnemyBullet)
                 try

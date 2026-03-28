@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class LightFadeScript : MonoBehaviour
 {
-    public float time;
-    private Light light;
-    private float startingIntensity;
-
+    public float amountPerSecond;
+    private Light l;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        light = GetComponent<Light>();
-        startingIntensity = light.intensity;
+        l = GetComponent<Light>();
         StartCoroutine(fade());
     }
 
@@ -20,9 +17,9 @@ public class LightFadeScript : MonoBehaviour
     {
         while (true)
         {
-            light.intensity -= (startingIntensity / time);
-            yield return new WaitForSeconds(startingIntensity/time);
-            if (light.intensity > 0 ) 
+            l.intensity -= amountPerSecond / 10;
+            yield return new WaitForSeconds(0.1f);
+            if (l.intensity >= 0)
                 yield return null;
         }
     }

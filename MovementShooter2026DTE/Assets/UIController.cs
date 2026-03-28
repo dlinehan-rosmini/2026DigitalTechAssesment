@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    [Header("Misc")]
+    public bool debuggingMode;
+
+
     [Header("Speedometer")]
     public float speed;
     public Text speedText;
@@ -16,6 +20,8 @@ public class UIController : MonoBehaviour
     [Header("Guns")]
     public string Gunname;
     public string Gunsubtext;
+    public int gunIndex;
+    public int gunCount;
     public Text nameText;
     public Text subtextText;
 
@@ -33,46 +39,37 @@ public class UIController : MonoBehaviour
     private float killiconVisibilityTime;
 
     [Header("Mission")]
+    public bool missionComplete;
     public GameController gameControl;
-    public GameObject missionHalfCompleteText;
     public GameObject missionCompletePopup;
     public KeyCode restartGameKeycode;
-    public float CompleteholdTime;
-    float heldTime;
-    public Image holdTimeFillIndicator;
 
     private void Update()
     {
-        speedText.text = speed.ToString();
-        stateText.text = state.ToString();
-        nameText.text = Gunname.ToString();
+        speedText.text = Mathf.Round(speed).ToString() + "km/ph";
+        if (debuggingMode)
+        {
+            stateText.text = state.ToString();
+            stateText.gameObject.SetActive(true);
+        }
+        else
+            stateText.gameObject.SetActive(false);
+
+        nameText.text = $"{Gunname.ToString()} ({gunIndex}/{gunCount})";
         subtextText.text = Gunsubtext.ToString();
-        nanitePercentText.text = (nanitePercent.ToString()) + "%";
+        nanitePercentText.text = "N = " + nanitePercent.ToString() + "%";
 
         if (damageIndicatorTime > 0)
         {
             damageIndicatorTime -= Time.deltaTime;
         }
-        if (killiconVisibilityTime > 0)
-        {
-            killiconVisibilityTime -= Time.deltaTime;
-        }
-        if (Input.GetKey(restartGameKeycode))
-        {
-            if (heldTime < CompleteholdTime)
-            {
-                heldTime += Time.deltaTime;
-                holdTimeFillIndicator.fillAmount = heldTime / CompleteholdTime;
-            }
-            else
-            {
-                gameControl.RestartMission();
-            }
-        }
 
 
-        if (heldTime > 0)
-            heldTime -= Time.deltaTime;
+        if (Input.GetKey(restartGameKeycode) && missionComplete)
+        {
+            gameControl.RestartMission();
+        }
+       
     }
 
 
@@ -93,17 +90,10 @@ public class UIController : MonoBehaviour
         killIcon.SetActive(true);
     }
 
-    public void CompleteMission(bool full)
+    public void CompleteMission()
     {
-        if (full)
-        {
-            missionCompletePopup.SetActive(true);
-            missionHalfCompleteText.SetActive(false);
-        }
-        else
-        {
-            missionHalfCompleteText.SetActive(true);
-        }
+        missionCompletePopup.SetActive(true);
+        missionComplete = true;
     }
 
 }

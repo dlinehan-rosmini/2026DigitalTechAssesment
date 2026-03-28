@@ -63,6 +63,7 @@ public class MissionManager : MonoBehaviour
             currentObj.missionLocation = currentMissionLocation;
         }
 
+
     }
 
     public void CompleteObjective()
@@ -70,5 +71,6 @@ public class MissionManager : MonoBehaviour
         print("done");
         missionCanvas.SetActive(false);
         completeMission = true;
+        ui.CompleteMission();
     }
 }

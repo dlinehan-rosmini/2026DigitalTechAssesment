@@ -90,7 +90,8 @@ public class PlayerGunManager : MonoBehaviour
 
         uiControl.Gunname = currentlySelectedGun.UIName;
         uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
-
+        uiControl.gunIndex = currentlySelectedGunIndex + 1;
+        uiControl.gunCount = AvailableGuns.Length;
     }
 
     public void changeSelectedWeapon()

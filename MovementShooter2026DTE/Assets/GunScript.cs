@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class GunScript : MonoBehaviour
@@ -35,6 +36,7 @@ public class GunScript : MonoBehaviour
     public float reloadSpeed;
     private bool reloading;
     public int ArmorPenLevel;
+    public float MagazineNaniteCost;
 
     [Header("Effects")]
     //shootingFX
@@ -65,7 +67,10 @@ public class GunScript : MonoBehaviour
     {
         readyToFire = true;
 
-        UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
+        if (SpareMagazines > 0)
+            UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | {SpareMagazines} mag(s) left";
+        else
+            UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | 0 mags left, ({player.reloadselectedGun.ToString()}) to create new (-{MagazineNaniteCost}N)";
     }
     public void selectGun()
     {
@@ -180,7 +185,13 @@ public class GunScript : MonoBehaviour
 
             readyToFire=false;
             AmmoLoaded--;
-            UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
+
+            if (SpareMagazines > 0)
+                UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | {SpareMagazines} mag(s) left";
+            else
+                UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | 0 mags left, ({player.reloadselectedGun.ToString()}) to create new (-{MagazineNaniteCost}N)";
+
+
             if (AmmoLoaded == 0)
             {
                 gunAnimator.SetBool("gunEmpty", true);
@@ -201,25 +212,51 @@ public class GunScript : MonoBehaviour
 
     public void Reload()
     {
-        if (!reloading)
+        if (!reloading && SpareMagazines > 0)
         {
             if (magazine)
                 EjectMagazine();
             reloading = true;
-            UISubtext = "Reloading...";
+
+            UISubtext = $"Reloading...";
             Invoke(nameof(reloadin), reloadSpeed);
         }
+        else if (!reloading && SpareMagazines <= 0)
+        {
+            reloading = true;
+            UISubtext = "Generating...";
+            Invoke(nameof(RegenMagazine), reloadSpeed/2);
+        }
     }
+
     private void reloadin()
     {
         SpareMagazines--;
         reloading = false;
         staticMagazine.SetActive(true);
         AmmoLoaded = maxAmmoLoaded;
-        UISubtext = AmmoLoaded + "/" + maxAmmoLoaded;
+        if (SpareMagazines > 0)
+            UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | {SpareMagazines} mag(s) left";
+        else
+            UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | 0 mags left, ({player.reloadselectedGun.ToString()}) to create new (-{MagazineNaniteCost}N)" ;
+
         gunAnimator.SetBool("gunEmpty", false);
     }
+   
+    public void RegenMagazine()
+    {
+        if (player.Nanites > MagazineNaniteCost)
+        {
+            reloading = false;
+            SpareMagazines++;
+            player.Nanites-=MagazineNaniteCost;
+            if (SpareMagazines > 0)
+                UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | {SpareMagazines} mag(s) left";
+            else
+                UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | 0 mags left, ({player.reloadselectedGun.ToString()}) to create new (-{MagazineNaniteCost}N)";
 
+        }
+    }
     private void EjectShell()
     {
         var shellgo = Instantiate(shell, shellEjectPoint.transform);

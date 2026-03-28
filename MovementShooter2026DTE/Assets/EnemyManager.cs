@@ -108,7 +108,7 @@ public class EnemyManager : MonoBehaviour
         if (Time.time > nextCheckTime)
         {
             CheckIfLOSPLayer(); 
-            nextCheckTime = Time.time + checkInterval;
+            nextCheckTime = Time.time + (checkInterval + Random.Range(0.5f,-0.5f));
         }
     }
 
