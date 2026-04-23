@@ -28,6 +28,8 @@ public class UIController : MonoBehaviour
     [Header("Health")]
     public float nanitePercent;
     public Text nanitePercentText;
+    public bool dead;
+    public GameObject deadUI;
 
     [Header("Damage + Kill")]
     public Text damageIndicator;
@@ -43,6 +45,11 @@ public class UIController : MonoBehaviour
     public GameController gameControl;
     public GameObject missionCompletePopup;
     public KeyCode restartGameKeycode;
+
+    [Header("Menu")]
+    public KeyCode menuKey;
+    public GameObject menu;
+    public bool menuActive;
 
     private void Update()
     {
@@ -69,9 +76,34 @@ public class UIController : MonoBehaviour
         {
             gameControl.RestartMission();
         }
-       
+
+        if (Input.GetKeyDown(menuKey))
+        {
+            menuActive = !menuActive;
+        }
+        if (menuActive)
+        {
+            Time.timeScale = 0f;
+            menu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            if (!dead)
+            {
+                Time.timeScale = 1f;
+                menu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
     }
 
+    public void ChangeMenuStatus()
+    {
+        menuActive = !menuActive;
+    }
 
     private void LateUpdate()
     {
@@ -96,4 +128,12 @@ public class UIController : MonoBehaviour
         missionComplete = true;
     }
 
+    public void playerDied()
+    {
+        dead = true;
+        deadUI.SetActive(true);
+        Time.timeScale = 0.2f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }

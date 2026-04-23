@@ -24,6 +24,7 @@ public class GunScript : MonoBehaviour
     public bool automatic = true;
     public bool shooting;
     private bool firerateTimerActive;
+    public GameObject bulletTrail;
 
     [Header("Shotgun")]
     public bool shotGun;
@@ -95,6 +96,8 @@ public class GunScript : MonoBehaviour
                 for (int i = 0; i < pellets; i++)
                 {
                     bulletAngle += new Vector3(Random.Range(-BulletSpread, BulletSpread), Random.Range(-BulletSpread/2, BulletSpread/2),0);
+                    var trail = Instantiate(bulletTrail, bulletPosition.position, Quaternion.Euler(bulletAngle));
+                    trail.GetComponent<BulletTrailScript>().moveSpeed = BulletSpeed;
                     if (Physics.Raycast(bulletPosition.position, bulletAngle, out bullet, shootDistance, bulletHitLayer))
                     {
                         if (bullet.collider.gameObject.GetComponent<EnemyManager>() != null)
@@ -133,6 +136,8 @@ public class GunScript : MonoBehaviour
             }
             else
             {
+                var trail = Instantiate(bulletTrail, bulletPosition.position, Quaternion.Euler(bulletAngle));
+                trail.GetComponent<BulletTrailScript>().moveSpeed = BulletSpeed;
                 if (Physics.Raycast(bulletPosition.position, bulletAngle, out bullet, shootDistance, bulletHitLayer))
                 {
                     if (bullet.collider.gameObject.GetComponent<EnemyManager>() != null)

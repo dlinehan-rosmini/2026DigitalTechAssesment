@@ -20,6 +20,7 @@ public class PlayerGunManager : MonoBehaviour
     public KeyCode throwThrowable;
 
     [Header("Health")]
+    public bool ded;
     public float Nanites;
     public float fullNanites;
     public float maxNanites;
@@ -39,7 +40,7 @@ public class PlayerGunManager : MonoBehaviour
     private void Start()
     {
         //test
-        createLoadout(0, 2, 4);
+        createLoadout(0, 5, 4);
         
 
         nanitePercent = Nanites / fullNanites;
@@ -81,12 +82,13 @@ public class PlayerGunManager : MonoBehaviour
         if (Input.GetKeyDown(changeWeapon))
             changeSelectedWeapon();
 
-        if (Input.GetKeyDown(takeDamage))
-            ChangeHealth(-13, 10);
-
         if (Input.GetKeyDown(throwThrowable) && throwableAmmo > 0)
             Throwable();
 
+        if (Nanites <= 0)
+        {
+            death();
+        }
 
         uiControl.Gunname = currentlySelectedGun.UIName;
         uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
@@ -169,5 +171,14 @@ public class PlayerGunManager : MonoBehaviour
     public void addDamage(float am, Color col)
     {
         uiControl.ChangeDamageIndicator(am, col);
+    }
+
+    public void death()
+    {
+        //death is inevatble
+        ded = true;
+        GetComponent<PlayerMovement>().dead = true;
+        if (!ded)
+            uiControl.playerDied();
     }
 }

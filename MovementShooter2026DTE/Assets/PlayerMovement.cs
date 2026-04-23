@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Misc")]
+    public bool dead;
 
 
     [Header("Movement")]
@@ -90,11 +92,12 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-
-        MyInput();
-        SpeedControl();
-        StateHandler();
-
+        if (!dead)
+        {
+            MyInput();
+            SpeedControl();
+            StateHandler();
+        }
         if (grounded)
         {
             rb.linearDamping = groundDrag;
@@ -106,7 +109,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!dead)
+            MovePlayer();
     }
 
     private void MyInput()

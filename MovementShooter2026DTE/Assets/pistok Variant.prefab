@@ -109,6 +109,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4300016, guid: 8ad3e0a85a0ebca4293e1b33319beb91, type: 3}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: BulletSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: bulletTrail
+      value: 
+      objectReference: {fileID: 8811205611916886012, guid: 4b77bc5657cac43489abbc3abe41faef, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: gunAnimator
       value: 
       objectReference: {fileID: 7224884042588887382}

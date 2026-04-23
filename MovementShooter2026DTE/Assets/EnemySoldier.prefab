@@ -1,5 +1,205 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2951319876824561282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8001673657298332385}
+  - component: {fileID: 7972547478741995393}
+  - component: {fileID: 4277721035845543990}
+  - component: {fileID: 7695596898558753796}
+  - component: {fileID: 7394690447754410165}
+  - component: {fileID: 1882639861124019366}
+  m_Layer: 8
+  m_Name: EnemySoldier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8001673657298332385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8021724445841005406}
+  - {fileID: 4652898074135749198}
+  m_Father: {fileID: 7879401588334980773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7972547478741995393
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.58
+  m_Height: 3.67
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &4277721035845543990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd92ccff9351e904a96c9e9efbf69721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dead: 0
+  Health: 100
+  FullHealth: 100
+  armorLevel: 2
+  soldierAnimator: {fileID: 1813143309833160799}
+  moving: 0
+  shooting: 0
+  healthBar: {fileID: 6987869099695965098}
+  moveSpeed: 10
+  rotateSpeed: 1000
+  canMove: 1
+  destination: {fileID: 4012580016036307604}
+  patrolDestination: {x: 0, y: 0, z: 0}
+  debuggingMode: 0
+  model: {fileID: 6717662017721414817}
+  canvas: {fileID: 4164315057937488176}
+  collision: {fileID: 7972547478741995393}
+  uicontrol: {fileID: 0}
+  playerGunManager: {fileID: 0}
+  partOfObjective: 0
+  misObjHandler: {fileID: 0}
+  handlerIndex: 0
+  currentState: 0
+  stateChangeTime: 0
+  canTargetPlayer: 1
+  canSeePlayer: 0
+  viewAngle: 180
+  viewDistance: 100000
+  farCheckInterval: 0.6
+  nearCheckInterval: 0.01
+  playerDistanceTrigger: 30
+  targetingHitLayer:
+    serializedVersion: 2
+    m_Bits: 759
+  firePos: {fileID: 3586914985363997418}
+  shootFX: {fileID: 4146099962911283528, guid: 8c6b6adafb344fc4b8789e8ea98ef604, type: 3}
+  canFire: 1
+  fireRate: 0.2
+  bulletDamage: 5
+  ArmorPenLevel: 1
+  bulletSpread: 1
+  bullet: {fileID: 2646488410706229954, guid: 7de08669b6ae76b4fa01983fab3681d9, type: 3}
+  bulletSpeed: 10000
+--- !u!114 &7695596898558753796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &7394690447754410165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIPath
+  version: 5
+  radius: 0.81
+  height: 3
+  canMove: 1
+  maxSpeed: 3
+  gravity: {x: NaN, y: NaN, z: NaN}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  repathRateCompatibility: NaN
+  canSearchCompability: 0
+  orientation: 0
+  enableRotation: 1
+  autoRepath:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 10
+  slowdownDistance: 2.77
+  pickNextWaypointDist: 1.31
+  endReachedDistance: 1.6
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 1
+--- !u!114 &1882639861124019366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951319876824561282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIDestinationSetter
+  version: 1
+  target: {fileID: 0}
 --- !u!1 &4164315057937488176
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +234,7 @@ RectTransform:
   m_Children:
   - {fileID: 1737884102453307646}
   - {fileID: 2100068670792191284}
-  m_Father: {fileID: 7879401588334980773}
+  m_Father: {fileID: 8001673657298332385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -146,6 +346,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4652898074135749198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4429279582776055003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4012580016036307604}
+  m_Layer: 0
+  m_Name: destination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4012580016036307604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429279582776055003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7879401588334980773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5788253335897578613
 GameObject:
@@ -328,7 +559,7 @@ Transform:
   m_Children:
   - {fileID: 1813143309840656259}
   - {fileID: 3586914985363997418}
-  m_Father: {fileID: 7879401588334980773}
+  m_Father: {fileID: 8001673657298332385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8431133269051929374
 GameObject:
@@ -339,12 +570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7879401588334980773}
-  - component: {fileID: 1557671426639277510}
-  - component: {fileID: 8821946061493780253}
-  - component: {fileID: 4374860694952630482}
-  - component: {fileID: 1497637845982605052}
-  - component: {fileID: 3045154923692880662}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemySoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,172 +585,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8431133269051929374}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.56, y: -0.00000011297993, z: -24.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8021724445841005406}
-  - {fileID: 4652898074135749198}
+  - {fileID: 8001673657298332385}
+  - {fileID: 4012580016036307604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1557671426639277510
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431133269051929374}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.58
-  m_Height: 3.67
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
---- !u!114 &8821946061493780253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431133269051929374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd92ccff9351e904a96c9e9efbf69721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  dead: 0
-  Health: 100
-  FullHealth: 100
-  armorLevel: 2
-  soldierAnimator: {fileID: 1813143309833160799}
-  moving: 0
-  shooting: 0
-  healthBar: {fileID: 6987869099695965098}
-  moveSpeed: 10
-  rotateSpeed: 1000
-  canMove: 1
-  destination: {fileID: 0}
-  debuggingMode: 0
-  model: {fileID: 6717662017721414817}
-  canvas: {fileID: 4164315057937488176}
-  collision: {fileID: 1557671426639277510}
-  uicontrol: {fileID: 0}
-  playerGunManager: {fileID: 0}
-  partOfObjective: 0
-  misObjHandler: {fileID: 0}
-  handlerIndex: 0
-  canTargetPlayer: 1
-  canSeePlayer: 0
-  viewAngle: 180
-  viewDistance: 1000
-  checkInterval: 0.2
-  targetingHitLayer:
-    serializedVersion: 2
-    m_Bits: 759
-  firePos: {fileID: 3586914985363997418}
-  shootFX: {fileID: 4146099962911283528, guid: 8c6b6adafb344fc4b8789e8ea98ef604, type: 3}
-  canFire: 1
-  fireRate: 0.3
-  bulletDamage: 10
-  ArmorPenLevel: 1
-  bulletSpread: 1
-  bullet: {fileID: 2646488410706229954, guid: 7de08669b6ae76b4fa01983fab3681d9, type: 3}
-  bulletSpeed: 10000
---- !u!114 &4374860694952630482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431133269051929374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 1
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!114 &1497637845982605052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431133269051929374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIPath
-  version: 5
-  radius: 0.81
-  height: 3
-  canMove: 1
-  maxSpeed: 3
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 0
-  enableRotation: 1
-  autoRepath:
-    mode: 2
-    interval: 0.5
-    sensitivity: 10
-    maximumInterval: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 10
-  slowdownDistance: 2.77
-  pickNextWaypointDist: 1.31
-  endReachedDistance: 1.6
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
-  constrainInsideGraph: 1
---- !u!114 &3045154923692880662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431133269051929374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIDestinationSetter
-  version: 1
-  target: {fileID: 0}
 --- !u!1001 &1813143309840530751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,7 +908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27899936
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.y

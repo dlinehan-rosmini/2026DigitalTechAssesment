@@ -12,10 +12,10 @@ public class EnemyPatrolGroupHandler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        destination.position = new Vector3(transform.position.x + Random.Range(patrolBounds.x, -patrolBounds.x), 0f, transform.position.z + Random.Range(patrolBounds.z, -patrolBounds.z));
+        Vector3 patDestination = new Vector3(transform.position.x + Random.Range(patrolBounds.x, -patrolBounds.x), 0f, transform.position.z + Random.Range(patrolBounds.z, -patrolBounds.z));
         foreach (EnemyManager enemy in enemies)
         {
-            enemy.destination = destination;
+            enemy.patrolDestination = new Vector3(patDestination.x + Random.Range(-5,5), 0f, patDestination.z + Random.Range(-5, 5));
         }
         StartCoroutine(patrolDestinationReset());
     }
@@ -31,7 +31,11 @@ public class EnemyPatrolGroupHandler : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(randomiseTime);
-            destination.position = new Vector3(transform.position.x + Random.Range(patrolBounds.x, -patrolBounds.x), 0f, transform.position.z + Random.Range(patrolBounds.z, -patrolBounds.z));
+            Vector3 patDestination = new Vector3(transform.position.x + Random.Range(patrolBounds.x, -patrolBounds.x), 0f, transform.position.z + Random.Range(patrolBounds.z, -patrolBounds.z));
+            foreach (EnemyManager enemy in enemies)
+            {
+                enemy.patrolDestination = new Vector3(patDestination.x + Random.Range(-5, 5), 0f, patDestination.z + Random.Range(-5, 5));
+            }
         }
     }
 }
