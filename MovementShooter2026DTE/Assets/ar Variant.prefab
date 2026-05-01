@@ -152,6 +152,10 @@ PrefabInstance:
       value: 0.685
       objectReference: {fileID: 0}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: db86cc2ff6e4d2b4d8405b2448b49056, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: shell
       value: 
       objectReference: {fileID: 1312217365781503629, guid: b6c491e2ce4640c419364efeb331bcf0, type: 3}
@@ -179,6 +183,10 @@ PrefabInstance:
       propertyPath: shellModel
       value: 
       objectReference: {fileID: 4300004, guid: 8ad3e0a85a0ebca4293e1b33319beb91, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: bulletTrail
+      value: 
+      objectReference: {fileID: 8811205611916886012, guid: 4b77bc5657cac43489abbc3abe41faef, type: 3}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: gunAnimator
       value: 

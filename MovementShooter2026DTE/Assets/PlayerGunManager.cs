@@ -5,6 +5,7 @@ public class PlayerGunManager : MonoBehaviour
     [Header ("Gun Selection Management")]
     public GunScript currentlySelectedGun;
     public int currentlySelectedGunIndex;
+    public Vector3 gunChoices;
 
     [Header("References")]
     public PlayerMovement pm;
@@ -36,11 +37,10 @@ public class PlayerGunManager : MonoBehaviour
     public int throwableAmmo;
     public int maxThrowableAmmo;
 
+    private bool gunSelectionComplete = false;
 
     private void Start()
     {
-        //test
-        createLoadout(0, 5, 4);
         
 
         nanitePercent = Nanites / fullNanites;
@@ -59,12 +59,6 @@ public class PlayerGunManager : MonoBehaviour
         }
 
         uiControl.nanitePercent = nanitePercent * 100;
-        currentlySelectedGun = AvailableGuns[currentlySelectedGunIndex];
-        foreach (GunScript gun in AvailableGuns)
-        {
-            gun.gameObject.SetActive(false);
-        }
-        currentlySelectedGun.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -89,11 +83,13 @@ public class PlayerGunManager : MonoBehaviour
         {
             death();
         }
-
-        uiControl.Gunname = currentlySelectedGun.UIName;
-        uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
-        uiControl.gunIndex = currentlySelectedGunIndex + 1;
-        uiControl.gunCount = AvailableGuns.Length;
+        if (gunSelectionComplete)
+        {
+            uiControl.gunImage = currentlySelectedGun.Icon;
+            uiControl.Gunsubtext = currentlySelectedGun.UISubtext;
+            uiControl.gunIndex = currentlySelectedGunIndex + 1;
+            uiControl.gunCount = AvailableGuns.Length;
+        }
     }
 
     public void changeSelectedWeapon()
@@ -122,7 +118,7 @@ public class PlayerGunManager : MonoBehaviour
 
 
     }
-    public void createLoadout(int firstGunIndex, int secondGunIndex, int thirdGunIndex)
+    private void createLoadout(int firstGunIndex, int secondGunIndex, int thirdGunIndex)
     {
         AvailableGuns[0] = guns[firstGunIndex];
         AvailableGuns[1] = guns[secondGunIndex];
@@ -175,10 +171,36 @@ public class PlayerGunManager : MonoBehaviour
 
     public void death()
     {
-        //death is inevatble
-        ded = true;
-        GetComponent<PlayerMovement>().dead = true;
         if (!ded)
             uiControl.playerDied();
+     //death is inevatble
+        ded = true;   
+        GetComponent<PlayerMovement>().dead = true;
+        
+    }
+
+    public void ChangeSlot1(int index)
+    {
+        gunChoices.x = index;
+    }
+    public void ChangeSlot2(int index)
+    {
+
+        gunChoices.y = index;
+    }
+    public void ChangeSlot3(int index)
+    {
+        gunChoices.z = index;
+    }
+    public void finaliseLoadout()
+    {
+        createLoadout(Mathf.RoundToInt(gunChoices.x), Mathf.RoundToInt(gunChoices.y), Mathf.RoundToInt(gunChoices.z));
+        currentlySelectedGun = AvailableGuns[currentlySelectedGunIndex];
+        foreach (GunScript gun in AvailableGuns)
+        {
+            gun.gameObject.SetActive(false);
+        }
+        currentlySelectedGun.gameObject.SetActive(true);
+        gunSelectionComplete  = true;
     }
 }

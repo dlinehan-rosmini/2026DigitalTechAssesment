@@ -59,8 +59,8 @@ public class GunScript : MonoBehaviour
     public Transform bulletPosition;
     public GameObject hitMark;
 
-    [Header ("UI")]
-    public string UIName;
+    [Header("UI")]
+    public Sprite Icon; 
     public string UISubtext;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -294,7 +294,7 @@ public class EnemyManager : MonoBehaviour
         {
             misObjHandler.missionCriticalObjectives[handlerIndex] = true;
         }
-        Destroy(gameObject, 10f);
+        Destroy(gameObject);
 
 
     }

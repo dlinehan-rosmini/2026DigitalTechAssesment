@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
 {
     [Header("Misc")]
     public bool debuggingMode;
-
+    public GameObject UIGObj;
 
     [Header("Speedometer")]
     public float speed;
@@ -18,11 +18,11 @@ public class UIController : MonoBehaviour
     public Text stateText;
 
     [Header("Guns")]
-    public string Gunname;
+    public Sprite gunImage;
     public string Gunsubtext;
     public int gunIndex;
     public int gunCount;
-    public Text nameText;
+    public Image nameText;
     public Text subtextText;
 
     [Header("Health")]
@@ -51,6 +51,11 @@ public class UIController : MonoBehaviour
     public GameObject menu;
     public bool menuActive;
 
+    [Header("Gun Selection")]
+    public bool selectionActive;
+    public GameObject gunselectionGObj;
+    
+
     private void Update()
     {
         speedText.text = Mathf.Round(speed).ToString() + "km/ph";
@@ -62,9 +67,9 @@ public class UIController : MonoBehaviour
         else
             stateText.gameObject.SetActive(false);
 
-        nameText.text = $"{Gunname.ToString()} ({gunIndex}/{gunCount})";
+        nameText.sprite = gunImage;
         subtextText.text = Gunsubtext.ToString();
-        nanitePercentText.text = "N = " + nanitePercent.ToString() + "%";
+        nanitePercentText.text = "Health = " + nanitePercent.ToString() + "%";
 
         if (damageIndicatorTime > 0)
         {
@@ -76,30 +81,45 @@ public class UIController : MonoBehaviour
         {
             gameControl.RestartMission();
         }
-
-        if (Input.GetKeyDown(menuKey))
-        {
-            menuActive = !menuActive;
-        }
-        if (menuActive)
-        {
-            Time.timeScale = 0f;
-            menu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
+        if (!selectionActive)
         {
             if (!dead)
             {
-                Time.timeScale = 1f;
-                menu.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                if (Input.GetKeyDown(menuKey))
+                {
+                    menuActive = !menuActive;
+                }
+                if (menuActive)
+                {
+                    Time.timeScale = 0f;
+                    menu.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    if (!dead)
+                    {
+                        Time.timeScale = 1f;
+                        menu.SetActive(false);
+                        Cursor.lockState = CursorLockMode.Locked;
+                        Cursor.visible = false;
+                    }
+                }
             }
         }
+        else
+        {
+            UIGObj.SetActive(false);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
-
+    public void closeMenu()
+    {
+        menuActive = false;
+    }
     public void ChangeMenuStatus()
     {
         menuActive = !menuActive;
@@ -126,6 +146,13 @@ public class UIController : MonoBehaviour
     {
         missionCompletePopup.SetActive(true);
         missionComplete = true;
+    }
+
+    public void closeGunSelectionMenu()
+    {
+        selectionActive = false;
+        gunselectionGObj.SetActive(false);
+        UIGObj.SetActive(true);
     }
 
     public void playerDied()
