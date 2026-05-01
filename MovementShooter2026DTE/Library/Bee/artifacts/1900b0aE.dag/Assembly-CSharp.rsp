@@ -479,6 +479,7 @@
 "Assets/DestroyAfterTIme.cs"
 "Assets/EnemyManager.cs"
 "Assets/EnemyPatrolGroupHandler.cs"
+"Assets/FollowGameObject.cs"
 "Assets/GameController.cs"
 "Assets/goToObjectScript.cs"
 "Assets/GunScript.cs"
