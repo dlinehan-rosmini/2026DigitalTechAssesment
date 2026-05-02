@@ -491,6 +491,7 @@
 "Assets/PlayerCamera.cs"
 "Assets/PlayerGunManager.cs"
 "Assets/PlayerMovement.cs"
+"Assets/PlayerTargetingScript.cs"
 "Assets/Sliding.cs"
 "Assets/ThrowableScript.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"

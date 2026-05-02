@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
@@ -11,11 +12,11 @@ public class UIController : MonoBehaviour
 
     [Header("Speedometer")]
     public float speed;
-    public Text speedText;
+    public TMP_Text speedText;
 
     [Header("State")]
     public string state;
-    public Text stateText;
+    public TMP_Text stateText;
 
     [Header("Guns")]
     public Sprite gunImage;
@@ -23,23 +24,18 @@ public class UIController : MonoBehaviour
     public int gunIndex;
     public int gunCount;
     public Image nameText;
-    public Text subtextText;
+    public TMP_Text subtextText;
 
     [Header("Health")]
     public float nanitePercent;
-    public Text nanitePercentText;
+    public TMP_Text nanitePercentText;
     public bool dead;
     public GameObject deadUI;
 
     [Header("Damage + Kill")]
-    public Text damageIndicator;
+    public TMP_Text damageIndicator;
     public float MaxdamageIndicatorTime;
     private float damageIndicatorTime;
-    //Kill icon
-    public GameObject killIcon;
-    public float maxKillIconVisibilityTime;
-    private float killiconVisibilityTime;
-
     [Header("Mission")]
     public bool missionComplete;
     public GameController gameControl;
@@ -128,7 +124,6 @@ public class UIController : MonoBehaviour
     private void LateUpdate()
     {
         damageIndicator.gameObject.SetActive(damageIndicatorTime > 0);
-        killIcon.SetActive(killiconVisibilityTime > 0);
     }
     public void ChangeDamageIndicator(float dam, Color col)
     {
@@ -138,8 +133,7 @@ public class UIController : MonoBehaviour
     }
     public void ActivateKillIndicator()
     {
-        killiconVisibilityTime = maxKillIconVisibilityTime;
-        killIcon.SetActive(true);
+        //removed
     }
 
     public void CompleteMission()

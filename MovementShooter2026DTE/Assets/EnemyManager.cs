@@ -62,6 +62,8 @@ public class EnemyManager : MonoBehaviour
 
     public LayerMask targetingHitLayer;
     public Transform firePos;
+    public bool multipleFirePos;
+    public Transform[] multipleFirePositions;
     public GameObject shootFX;
     public bool canFire;
     public float fireRate;
@@ -218,21 +220,45 @@ public class EnemyManager : MonoBehaviour
     {
         if (canFire)
         {
-            //Convert the direction to the player into a confusing stupid quaterinisininfosnd
-            Quaternion baseRotation = Quaternion.LookRotation(direction);
-            //get random numbers for bullet spread
-            float randomX = Random.Range(-bulletSpread, bulletSpread);
-            float randomY = Random.Range(-bulletSpread, bulletSpread);
-            //turn those random numbers into ANOTHER QUATERNIONNNNN
-            Quaternion spreadRotation = Quaternion.Euler(randomX, randomY, 0);
-            //this better be the last one
-            Quaternion finalRotation = baseRotation * spreadRotation;
-            //shoot bullet with calculations done before
-            var bul = Instantiate(bullet, firePos.position, finalRotation);
-            bul.GetComponent<BulletScript>().shootBullet(bulletSpeed, bulletDamage, ArmorPenLevel);
-            Instantiate(shootFX, firePos.position, finalRotation);
-            canFire = false;
-            Invoke(nameof(resetFireRate), fireRate);
+            if (multipleFirePos)
+            {
+                foreach (Transform t in multipleFirePositions)
+                {
+                    //Convert the direction to the player into a confusing stupid quaterinisininfosnd
+                    Quaternion baseRotation = Quaternion.LookRotation(direction);
+                    //get random numbers for bullet spread
+                    float randomX = Random.Range(-bulletSpread, bulletSpread);
+                    float randomY = Random.Range(-bulletSpread, bulletSpread);
+                    //turn those random numbers into ANOTHER QUATERNIONNNNN
+                    Quaternion spreadRotation = Quaternion.Euler(randomX, randomY, 0);
+                    //this better be the last one
+                    Quaternion finalRotation = baseRotation * spreadRotation;
+                    //shoot bullet with calculations done before
+                    var bul = Instantiate(bullet, t.position, finalRotation);
+                    bul.GetComponent<BulletScript>().shootBullet(bulletSpeed, bulletDamage, ArmorPenLevel);
+                    Instantiate(shootFX, t.position, finalRotation);
+                    canFire = false;
+                    Invoke(nameof(resetFireRate), fireRate);
+                }
+            }
+            else
+            {
+                //Convert the direction to the player into a confusing stupid quaterinisininfosnd
+                Quaternion baseRotation = Quaternion.LookRotation(direction);
+                //get random numbers for bullet spread
+                float randomX = Random.Range(-bulletSpread, bulletSpread);
+                float randomY = Random.Range(-bulletSpread, bulletSpread);
+                //turn those random numbers into ANOTHER QUATERNIONNNNN
+                Quaternion spreadRotation = Quaternion.Euler(randomX, randomY, 0);
+                //this better be the last one
+                Quaternion finalRotation = baseRotation * spreadRotation;
+                //shoot bullet with calculations done before
+                var bul = Instantiate(bullet, firePos.position, finalRotation);
+                bul.GetComponent<BulletScript>().shootBullet(bulletSpeed, bulletDamage, ArmorPenLevel);
+                Instantiate(shootFX, firePos.position, finalRotation);
+                canFire = false;
+                Invoke(nameof(resetFireRate), fireRate);
+            }
         }
     }
    

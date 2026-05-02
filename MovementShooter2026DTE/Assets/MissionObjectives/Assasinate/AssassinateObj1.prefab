@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   missionCriticalObjectives: 00
+  missionComplete: 0
+  missionLocation: {fileID: 0}
+  manangeah: {fileID: 0}
+  missionImage: {fileID: 0}
 --- !u!1 &5322847628571097075
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,15 +92,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2602592946111961689, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2602592946111961689, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2602592946111961689, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2602592946111961689, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221363263985232764, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: Health
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 5221363263985232764, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: moveSpeed
@@ -152,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221363263985232764, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: FullHealth
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 5221363263985232764, guid: e0afd3f06aeb4714da2aca766af661e6, type: 3}
       propertyPath: armorLevel

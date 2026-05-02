@@ -23,4 +23,9 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetSceneByName(menuSceneName).buildIndex);
     }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(SceneManager.GetSceneByName(name).buildIndex);
+    }
 }
