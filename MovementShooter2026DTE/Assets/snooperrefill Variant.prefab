@@ -108,6 +108,10 @@ PrefabInstance:
       value: Sniper Rifle
       objectReference: {fileID: 0}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: AmmoLoaded
       value: 15
       objectReference: {fileID: 0}
@@ -127,6 +131,10 @@ PrefabInstance:
       propertyPath: reloadSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: shootingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f02814b62ca4c9469420ae40236bc23, type: 3}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: ArmorPenLevel
       value: 4
@@ -152,9 +160,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1791907668291185550}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: soundEffectGObj
+      value: 
+      objectReference: {fileID: 7993545795884314646, guid: f977508c8f018c14995bd2168544a64b, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: MagazineNaniteCost
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: startedReloadingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e0c70bed5c1a4443083a81de5648c7d5, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: finishedReloadingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: eb5685b26a6494994af389a3293064e8, type: 3}
     - target: {fileID: 5389847508675908619, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.647158

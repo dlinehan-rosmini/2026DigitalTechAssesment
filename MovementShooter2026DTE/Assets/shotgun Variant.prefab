@@ -140,6 +140,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: pellets
       value: 10
       objectReference: {fileID: 0}
@@ -176,6 +180,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: shootingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 517cb4111b60bc444813bbc62a479e05, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: BulletDamage
       value: 30
       objectReference: {fileID: 0}
@@ -207,6 +215,14 @@ PrefabInstance:
       propertyPath: staticMagazine
       value: 
       objectReference: {fileID: 3795933576345095233}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: soundEffectGObj
+      value: 
+      objectReference: {fileID: 7993545795884314646, guid: f977508c8f018c14995bd2168544a64b, type: 3}
+    - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
+      propertyPath: finishedReloadingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: af63539a5e39c99489395bdea2471f60, type: 3}
     - target: {fileID: 3874705068504275240, guid: f1213d9cd11ea50449c503a3a214c0b0, type: 3}
       propertyPath: bulletHitLayer.m_Bits
       value: 448

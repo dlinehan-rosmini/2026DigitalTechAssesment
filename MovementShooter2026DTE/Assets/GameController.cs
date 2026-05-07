@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public string menuSceneName;
+    public int menuSceneIndex;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,11 +21,11 @@ public class GameController : MonoBehaviour
     }
     public void QuitToMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetSceneByName(menuSceneName).buildIndex);
+        SceneManager.LoadScene(menuSceneIndex);
     }
 
-    public void LoadScene(string name)
+    public void LoadScene(int index)
     {
-        SceneManager.LoadScene(SceneManager.GetSceneByName(name).buildIndex);
+        SceneManager.LoadScene(index);
     }
 }

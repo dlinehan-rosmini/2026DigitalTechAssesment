@@ -10363,7 +10363,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.09
+  m_Intensity: 0.16
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12200,7 +12200,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.95
+  m_fontSize: 48.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12645,7 +12645,7 @@ Camera:
   m_GameObject: {fileID: 1478066557}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -12669,9 +12669,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 82.4
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 16.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12725,8 +12725,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -13810,8 +13810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -360.34082, y: 431.832}
-  m_SizeDelta: {x: 270.6817, y: 62.33609}
+  m_AnchoredPosition: {x: -390.02515, y: 434.0399}
+  m_SizeDelta: {x: 330.7321, y: 63.5124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717827622
 MonoBehaviour:
@@ -13860,11 +13860,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1905510240}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: MainScene
           m_BoolArgument: 0
@@ -14678,8 +14678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -461, y: 305}
-  m_SizeDelta: {x: 270.6817, y: 62.33609}
+  m_AnchoredPosition: {x: -390.02515, y: 346.58817}
+  m_SizeDelta: {x: 330.7321, y: 63.5124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1788743982
 Animator:
@@ -17433,7 +17433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fa90bc008363d489b42232204c37ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
-  menuSceneName: 
+  menuSceneIndex: 0
 --- !u!4 &1905510241
 Transform:
   m_ObjectHideFlags: 0
@@ -18581,7 +18581,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.95
+  m_fontSize: 48.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

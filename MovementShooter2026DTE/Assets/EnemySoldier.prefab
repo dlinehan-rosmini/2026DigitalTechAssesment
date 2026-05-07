@@ -199,6 +199,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 759
   firePos: {fileID: 3586914985363997418}
+  multipleFirePos: 0
+  multipleFirePositions: []
   shootFX: {fileID: 4146099962911283528, guid: 8c6b6adafb344fc4b8789e8ea98ef604, type: 3}
   canFire: 1
   fireRate: 0.2
@@ -207,6 +209,9 @@ MonoBehaviour:
   bulletSpread: 1
   bullet: {fileID: 2646488410706229954, guid: 7de08669b6ae76b4fa01983fab3681d9, type: 3}
   bulletSpeed: 10000
+  soundEffectObject: {fileID: 7993545795884314646, guid: f977508c8f018c14995bd2168544a64b, type: 3}
+  shootingSound: {fileID: 8300000, guid: f19e3fdb9c8082647a2c32beca28ba84, type: 3}
+  audioVolume: 0.3
 --- !u!114 &7695596898558753796
 MonoBehaviour:
   m_ObjectHideFlags: 0

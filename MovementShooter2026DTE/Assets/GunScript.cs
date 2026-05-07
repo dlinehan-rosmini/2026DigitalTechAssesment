@@ -52,6 +52,12 @@ public class GunScript : MonoBehaviour
     public GameObject staticMagazine;
     //Animations
     public Animator gunAnimator;
+    //SoundFX
+    public GameObject soundEffectGObj;
+    public AudioClip shootingSFX;
+    public AudioClip startedReloadingSFX;
+    public AudioClip finishedReloadingSFX;
+    public float volume;
 
 
     [Header("References")]
@@ -187,6 +193,13 @@ public class GunScript : MonoBehaviour
                 firerateTimerActive = true;
                 Invoke(nameof(FireRateLimit), FireRate);
             }
+            //SoundFX
+            if (shootingSFX != null)
+            {
+                var s = Instantiate(soundEffectGObj, transform.position, Quaternion.identity);
+                s.GetComponent<SoundEffectScript>().sound = shootingSFX;
+                s.GetComponent<SoundEffectScript>().volume = volume;
+            }
 
             readyToFire=false;
             AmmoLoaded--;
@@ -219,15 +232,26 @@ public class GunScript : MonoBehaviour
     {
         if (!reloading && SpareMagazines > 0)
         {
+            //removes the magazine
             if (magazine)
                 EjectMagazine();
+            //makes sure the gun knows its reloading
             reloading = true;
-
+            //changes the UI
             UISubtext = $"Reloading...";
+            //Sound Effect
+            if (startedReloadingSFX != null)
+            {
+                var s = Instantiate(soundEffectGObj, transform.position, Quaternion.identity);
+                s.GetComponent<SoundEffectScript>().sound = startedReloadingSFX;
+                s.GetComponent<SoundEffectScript>().volume = volume;
+            }
+            //Triggers the function after the time that reload speed is set to
             Invoke(nameof(reloadin), reloadSpeed);
         }
         else if (!reloading && SpareMagazines <= 0)
         {
+            //Pretends like the guns reloading so the player doesint get confused 
             reloading = true;
             UISubtext = "Generating...";
             Invoke(nameof(RegenMagazine), reloadSpeed/2);
@@ -244,7 +268,13 @@ public class GunScript : MonoBehaviour
             UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | {SpareMagazines} mag(s) left";
         else
             UISubtext = $"{AmmoLoaded}/{maxAmmoLoaded} | 0 mags left, ({player.reloadselectedGun.ToString()}) to create new (-{MagazineNaniteCost}N)" ;
-
+        //Sound Effect
+        if (finishedReloadingSFX != null)
+        {
+            var s = Instantiate(soundEffectGObj, transform.position, Quaternion.identity);
+            s.GetComponent<SoundEffectScript>().sound = finishedReloadingSFX;
+            s.GetComponent<SoundEffectScript>().volume = volume;
+        }
         gunAnimator.SetBool("gunEmpty", false);
     }
    

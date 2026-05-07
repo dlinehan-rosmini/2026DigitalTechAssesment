@@ -11223,6 +11223,9 @@ MonoBehaviour:
   bulletSpread: 10
   bullet: {fileID: 2646488410706229954, guid: 7de08669b6ae76b4fa01983fab3681d9, type: 3}
   bulletSpeed: 5000
+  soundEffectObject: {fileID: 7993545795884314646, guid: f977508c8f018c14995bd2168544a64b, type: 3}
+  shootingSound: {fileID: 8300000, guid: 34b439bf70b80a6409eadecc6be92d68, type: 3}
+  audioVolume: 0.3
 --- !u!114 &8666713005958365743
 MonoBehaviour:
   m_ObjectHideFlags: 0

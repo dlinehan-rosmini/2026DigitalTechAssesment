@@ -2,7 +2,7 @@ using Pathfinding;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
@@ -44,7 +44,7 @@ public class EnemyManager : MonoBehaviour
     public MissionObjectiveHandler misObjHandler;
     public int handlerIndex;
 
-    [Header("Targeting + Attacking")]
+    [Header("Targeting")]
     public EnemyState currentState;
     public float stateChangeTime;
     public bool canTargetPlayer;
@@ -60,6 +60,7 @@ public class EnemyManager : MonoBehaviour
     public float playerDistanceTrigger;
     private float nextCheckTime;
 
+    [Header ("Attacking")]
     public LayerMask targetingHitLayer;
     public Transform firePos;
     public bool multipleFirePos;
@@ -72,6 +73,10 @@ public class EnemyManager : MonoBehaviour
     public float bulletSpread;
     public GameObject bullet;
     public float bulletSpeed;
+    [Header("SFX")]
+    public GameObject soundEffectObject;
+    public AudioClip shootingSound;
+    public float audioVolume;
 
     private float playerDistance;
     private Vector3 playerDir;
@@ -259,6 +264,13 @@ public class EnemyManager : MonoBehaviour
                 canFire = false;
                 Invoke(nameof(resetFireRate), fireRate);
             }
+            if (shootingSound != null)
+            {
+                var s = Instantiate(soundEffectObject, transform.position, Quaternion.identity);
+                s.GetComponent<SoundEffectScript>().sound = shootingSound;
+                s.GetComponent<SoundEffectScript>().volume = audioVolume;
+            }
+
         }
     }
    
