@@ -140,7 +140,7 @@
 -define:DOTWEEN
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
+-r:"Assets/Packages/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
 -r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.AdaptivePerformanceModule.dll"
@@ -488,13 +488,14 @@
 "Assets/MissionManager.cs"
 "Assets/MissionObjectiveHandler.cs"
 "Assets/MoveCamera.cs"
+"Assets/Packages/TutorialInfo/Scripts/Readme.cs"
 "Assets/PlayerCamera.cs"
 "Assets/PlayerGunManager.cs"
 "Assets/PlayerMovement.cs"
 "Assets/PlayerTargetingScript.cs"
 "Assets/Sliding.cs"
+"Assets/SoundEffectScript.cs"
 "Assets/ThrowableScript.cs"
-"Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/UIController.cs"
 "Assets/WallRunning.cs"
 -langversion:9.0

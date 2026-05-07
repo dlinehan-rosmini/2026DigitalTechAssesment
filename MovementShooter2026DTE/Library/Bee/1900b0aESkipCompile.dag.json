@@ -29,7 +29,7 @@
       "DisplayName": "Writing 6097564273297756792.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 83,
-      "PayloadLength": 10612,
+      "PayloadLength": 11374,
       "PayloadDebugContentSnippet": "-a=\"C:\\Users\\domin\\OneDrive\\Do",
       "Inputs": [],
       "InputFlags": [],
@@ -48,7 +48,7 @@
       "Inputs": [
         "C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/netcorerun/netcorerun.exe",
         "C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Tools/BuildPipeline/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
-        "Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll",
+        "Assets/Packages/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll",
         "Assets/Plugins/Demigiant/DOTween/DOTween.dll",
         "Library/ScriptAssemblies/Assembly-CSharp.dll",
         "Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll",
@@ -63,6 +63,11 @@
         "Library/ScriptAssemblies/Unity.Mathematics.dll",
         "Library/ScriptAssemblies/Unity.Multiplayer.Center.Common.dll",
         "Library/ScriptAssemblies/Unity.PerformanceTesting.dll",
+        "Library/ScriptAssemblies/Unity.ProBuilder.Csg.dll",
+        "Library/ScriptAssemblies/Unity.ProBuilder.dll",
+        "Library/ScriptAssemblies/Unity.ProBuilder.KdTree.dll",
+        "Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.dll",
+        "Library/ScriptAssemblies/Unity.ProBuilder.Stl.dll",
         "Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
         "Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll",
         "Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Shared.dll",
@@ -99,6 +104,11 @@
         "Library/Bee/artifacts/rsp/6097564273297756792.rsp"
       ],
       "InputFlags": [
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -292,13 +302,13 @@
   ],
   "StatSignatures": [
     {
-      "File": "Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
-    },
-    {
       "File": "Assets/csc.rsp"
     },
     {
       "File": "Assets/mcs.rsp"
+    },
+    {
+      "File": "Assets/Packages/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
     },
     {
       "File": "Assets/Plugins/Demigiant/DOTween/DOTween.dll"
@@ -386,6 +396,21 @@
     },
     {
       "File": "Library/ScriptAssemblies/Unity.PerformanceTesting.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ProBuilder.Csg.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ProBuilder.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ProBuilder.KdTree.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ProBuilder.Stl.dll"
     },
     {
       "File": "Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll"
