@@ -1,4 +1,24 @@
 <linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameController">
+			<method name="ExitGame"/>
+			<method name="LoadScene"/>
+			<method name="QuitToMenu"/>
+			<method name="QuitToMenu"/>
+			<method name="RestartMission"/>
+			<method name="RestartMission"/>
+		</type>
+		<type fullname="PlayerGunManager">
+			<method name="ChangeSlot1"/>
+			<method name="ChangeSlot2"/>
+			<method name="ChangeSlot3"/>
+			<method name="finaliseLoadout"/>
+		</type>
+		<type fullname="UIController">
+			<method name="closeGunSelectionMenu"/>
+			<method name="closeMenu"/>
+		</type>
+	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime" ignoreIfMissing="1">
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerButton">
 			<method name="OnAction"/>

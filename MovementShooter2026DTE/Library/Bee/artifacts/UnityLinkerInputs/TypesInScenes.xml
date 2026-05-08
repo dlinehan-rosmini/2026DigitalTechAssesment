@@ -2,20 +2,23 @@
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="BillboardUIManager" preserve="nothing"/>
 		<type fullname="BulletScript" preserve="nothing"/>
+		<type fullname="BulletTrailScript" preserve="nothing"/>
 		<type fullname="DestroyAfterTIme" preserve="nothing"/>
 		<type fullname="EnemyManager" preserve="nothing"/>
 		<type fullname="EnemyPatrolGroupHandler" preserve="nothing"/>
+		<type fullname="FollowGameObject" preserve="nothing"/>
 		<type fullname="GameController" preserve="nothing"/>
 		<type fullname="goToObjectScript" preserve="nothing"/>
 		<type fullname="GunScript" preserve="nothing"/>
-		<type fullname="LightFadeScript" preserve="nothing"/>
 		<type fullname="MissionManager" preserve="nothing"/>
 		<type fullname="MissionObjectiveHandler" preserve="nothing"/>
 		<type fullname="MoveCamera" preserve="nothing"/>
 		<type fullname="PlayerCamera" preserve="nothing"/>
 		<type fullname="PlayerGunManager" preserve="nothing"/>
 		<type fullname="PlayerMovement" preserve="nothing"/>
+		<type fullname="Readme" preserve="nothing"/>
 		<type fullname="Sliding" preserve="nothing"/>
+		<type fullname="SoundEffectScript" preserve="nothing"/>
 		<type fullname="ThrowableScript" preserve="nothing"/>
 		<type fullname="UIController" preserve="nothing"/>
 		<type fullname="WallRunning" preserve="nothing"/>
@@ -31,9 +34,15 @@
 	</assembly>
 	<assembly fullname="Unity.InputSystem">
 		<type fullname="UnityEngine.InputSystem.InputActionAsset" preserve="nothing"/>
+		<type fullname="UnityEngine.InputSystem.InputActionReference" preserve="nothing"/>
 		<type fullname="UnityEngine.InputSystem.InputSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.InputSystem.InputSystemObject" preserve="nothing"/>
 		<type fullname="UnityEngine.InputSystem.RemoteInputPlayerConnection" preserve="nothing"/>
+		<type fullname="UnityEngine.InputSystem.UI.InputSystemUIInputModule" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="Unity.ProBuilder">
+		<type fullname="UnityEngine.ProBuilder.ProBuilderMesh" preserve="nothing"/>
+		<type fullname="UnityEngine.ProBuilder.Shapes.ProBuilderShape" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime">
 		<type fullname="UnityEngine.Rendering.ProbeVolumesOptions" preserve="nothing"/>
@@ -101,6 +110,14 @@
 		<type fullname="UnityEngine.Rendering.Universal.Vignette" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.Universal.WhiteBalance" preserve="nothing"/>
 	</assembly>
+	<assembly fullname="Unity.TextMeshPro">
+		<type fullname="TMPro.TextMeshProUGUI" preserve="nothing"/>
+		<type fullname="TMPro.TMP_Dropdown" preserve="nothing"/>
+		<type fullname="TMPro.TMP_FontAsset" preserve="nothing"/>
+		<type fullname="TMPro.TMP_Settings" preserve="nothing"/>
+		<type fullname="TMPro.TMP_SpriteAsset" preserve="nothing"/>
+		<type fullname="TMPro.TMP_StyleSheet" preserve="nothing"/>
+	</assembly>
 	<assembly fullname="UnityEngine">
 		<type fullname="UnityEditor.Animations.AnimatorController" preserve="nothing"/>
 		<type fullname="UnityEditor.AudioManager" preserve="nothing"/>
@@ -111,12 +128,14 @@
 		<type fullname="UnityEditor.PlayerSettings" preserve="nothing"/>
 		<type fullname="UnityEditor.TagManager" preserve="nothing"/>
 		<type fullname="UnityEditor.TimeManager" preserve="nothing"/>
-		<type fullname="UnityEditor.UnityConnectSettings" preserve="nothing"/>
 		<type fullname="UnityEditor.VFXManager" preserve="nothing"/>
 		<type fullname="UnityEngine.AnimationClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Animator" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioResource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
 		<type fullname="UnityEngine.Avatar" preserve="nothing"/>
 		<type fullname="UnityEngine.Behaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider" preserve="nothing"/>
@@ -149,6 +168,7 @@
 		<type fullname="UnityEngine.Renderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.GraphicsSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.RenderTexture" preserve="nothing"/>
 		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.RuntimeAnimatorController" preserve="nothing"/>
 		<type fullname="UnityEngine.Shader" preserve="nothing"/>
@@ -172,6 +192,7 @@
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.LayoutElement" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Mask" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.RawImage" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Scrollbar" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.ScrollRect" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Text" preserve="nothing"/>
